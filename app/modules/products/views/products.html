@@ -1,0 +1,27 @@
+<ion-view>
+
+  <ion-nav-title>Products</ion-nav-title>
+  <ion-content>
+
+    <div class="list">
+
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <input type="text" placeholder="Search for Something!" ng-model="productsCtrl.input">
+        </label>
+        <button class="button button-small" ng-click="productsCtrl.search()">
+          Search
+        </button>
+      </div>
+
+      <a class="item item-thumbnail-left" ng-repeat="product in productsCtrl.products" ui-sref="product({ id: product.id })">
+        <img ng-src="{{ product.image_thumb_url }}">
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.producer_name }}</p>
+      </a>
+
+    </div>
+
+
+  </ion-content>
+</ion-view>

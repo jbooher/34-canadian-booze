@@ -1,23 +1,17 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
-
-import account from './modules/account';
-import chats from './modules/chats';
-import dash from './modules/dash';
-import tabs from './modules/tabs';
+import products from "./modules/products";
 
 let App = angular.module('app', [
   'ionic',
   'ui.router',
-  'tabs',
-  'account',
-  'chats',
-  'dash'
+
+  'jb.products'
 ]);
 
 function config($urlRouterProvider) {
-  $urlRouterProvider.otherwise("/tab/dash");
+  $urlRouterProvider.otherwise("/");
 }
 
 App.config(config);
